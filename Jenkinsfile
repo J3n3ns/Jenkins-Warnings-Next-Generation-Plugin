@@ -23,7 +23,7 @@ checkstyle:checkstyle pmd:pmd pmd:cpd findbugs:findbugs'
     } 
     post { 
         always { 
-            junit testResults: '**/target/surefire-reports/TEST-*.xml' 
+             junit testResults: '**/target/surefire-reports/TEST-*.xml' 
             recordIssues enabledForFailure: true, tools: [mavenConsole(), java(), javaDoc()] 
             recordIssues enabledForFailure: true, tool: checkStyle() 
             recordIssues enabledForFailure: true, tool: spotBugs(pattern: 
